@@ -62,6 +62,8 @@ class PokemonDetailFragment: Fragment() {
         binding.apply {
             pokeimg1.loadUrl(pokemon.urlImage)
             pokename1.text = pokemon.name
+            poketype1.text = pokemon.type
+            pokenumber1.text = pokemon.pokedexNumber
         }
     }
 }

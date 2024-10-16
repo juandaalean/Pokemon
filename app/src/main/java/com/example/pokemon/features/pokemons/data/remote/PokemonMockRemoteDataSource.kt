@@ -33,13 +33,7 @@ class PokemonMockRemoteDataSource {
             "197",
             "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/197.png"
         ),
-        Pokemon(
-            "5",
-            "Carnivine",
-            "Plant",
-            "455",
-            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/455.png"
-        )
+
         )
 
 

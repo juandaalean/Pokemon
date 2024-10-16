@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.example.pokemon.app.extensions.loadUrl
 import com.example.pokemon.databinding.FragmentPokemonBinding
 import com.example.pokemon.features.pokemons.domain.Pokemon
 
@@ -62,30 +63,33 @@ class PokemonsFragment : Fragment() {
                     navegationToDetails(pokemons[0].id)
                 }
             }
+            pokebackground1.loadUrl(pokemons[0].urlImage)
+
             pokemon2.apply {
                 text = pokemons[1].name
                 setOnClickListener {
                     navegationToDetails(pokemons[1].id)
                 }
             }
+            pokebackground2.loadUrl(pokemons[1].urlImage)
+
             pokemon3.apply {
                 text = pokemons[2].name
                 setOnClickListener {
                     navegationToDetails(pokemons[2].id)
                 }
             }
+            pokebackground3.loadUrl(pokemons[2].urlImage)
+
             pokemon4.apply {
                 text = pokemons[3].name
                 setOnClickListener {
                     navegationToDetails(pokemons[3].id)
                 }
             }
-            pokemon5.apply {
-                text = pokemons[4].name
-                setOnClickListener {
-                    navegationToDetails(pokemons[4].id)
-                }
-            }
+            pokebackground4.loadUrl(pokemons[3].urlImage)
+
+
         }
     }
 
