@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
+import com.example.pokemon.R
 import com.example.pokemon.app.extensions.loadUrl
 import com.example.pokemon.databinding.FragmentPokemonBinding
 import com.example.pokemon.features.pokemons.domain.Pokemon
@@ -26,7 +28,9 @@ class PokemonsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentPokemonBinding.inflate(inflater, container, false)
-        return binding.root
+        val view = binding.root
+        val adapter = PokemonAdapter()
+        val recyclerView = view.findViewById<RecyclerView>(R.id.pokemonRecyclerView)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

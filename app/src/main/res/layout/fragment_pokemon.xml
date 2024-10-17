@@ -6,6 +6,15 @@
     android:orientation="vertical"
     android:layout_margin="10dp">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pokemonRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <!--
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -93,6 +102,6 @@
             tools:text="pokemon"/>
     </RelativeLayout>
 
-
+-->
 
 </LinearLayout>
