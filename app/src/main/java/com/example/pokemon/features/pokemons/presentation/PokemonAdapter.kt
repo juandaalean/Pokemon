@@ -2,11 +2,12 @@ package com.example.pokemon.features.pokemons.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokemon.R
 import com.example.pokemon.features.pokemons.domain.Pokemon
 
-class PokemonAdapter(private val pokemonList:List<Pokemon>) : RecyclerView.Adapter<PokemonViewHolder>(){
+class PokemonAdapter() : ListAdapter<Pokemon, PokemonViewHolder>(PokemonDiffUtil()) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
@@ -14,11 +15,11 @@ class PokemonAdapter(private val pokemonList:List<Pokemon>) : RecyclerView.Adapt
         return PokemonViewHolder(layoutInflater.inflate(R.layout.item_pokemon, parent, false))
     }
 
-    override fun getItemCount(): Int = pokemonList.size
+    override fun getItemCount(): Int = currentList.size
 
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        val item = pokemonList[position]
+        val item = currentList[position]
         holder.render(item)
     }
 }

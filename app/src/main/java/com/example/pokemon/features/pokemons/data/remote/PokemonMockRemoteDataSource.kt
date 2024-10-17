@@ -33,7 +33,20 @@ class PokemonMockRemoteDataSource {
             "197",
             "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/197.png"
         ),
-
+        Pokemon(
+            "5",
+            "Jillicent",
+            "Water",
+            "521",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/593.png"
+        ),
+        Pokemon(
+            "6",
+            "Pikachu",
+            "Electro",
+            "25",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png"
+        )
         )
 
 
