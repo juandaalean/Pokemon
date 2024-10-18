@@ -6,12 +6,13 @@ import com.example.pokemon.app.extensions.loadUrl
 import com.example.pokemon.databinding.ItemPokemonBinding
 import com.example.pokemon.features.pokemons.domain.Pokemon
 
-class PokemonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class PokemonViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
-    private val binding = ItemPokemonBinding.bind(view)
+        private lateinit var binding: ItemPokemonBinding
 
     fun render(pokemon: Pokemon){
 
+        binding = ItemPokemonBinding.bind(view)
         binding.apply {
             tvPokemonName.text = pokemon.name
             tvPokemonType.text = pokemon.type
