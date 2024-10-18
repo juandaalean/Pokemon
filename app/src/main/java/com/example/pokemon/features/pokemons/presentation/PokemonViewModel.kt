@@ -17,11 +17,8 @@ class PokemonViewModel(private val getPokemonsUseCase: GetPokemonsUseCase): View
     val uiState : LiveData<UiState> = _uiState
 
     fun viewCreated() {
-        _uiState.value = (UiState(isLoading = true))
-
         viewModelScope.launch(Dispatchers.IO) {
             val pokemons = getPokemonsUseCase.invoke()
-            delay(5000)
             _uiState.postValue(UiState(pokemons = pokemons))
         }
     }

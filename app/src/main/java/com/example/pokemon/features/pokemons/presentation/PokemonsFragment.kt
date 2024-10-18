@@ -62,7 +62,8 @@ class PokemonsFragment : Fragment() {
     private fun setupView() {
         binding.apply {
             pokemonRecyclerView.layoutManager = LinearLayoutManager(
-                requireContext(), RecyclerView.VERTICAL,
+                requireContext(),
+                RecyclerView.VERTICAL,
                 false
             )
             pokemonRecyclerView.adapter = pokemonAdapter

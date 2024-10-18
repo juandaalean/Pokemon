@@ -1,16 +1,17 @@
 package com.example.pokemon.features.pokemons.data
 
 import com.example.pokemon.features.pokemons.data.local.PokemonXmlLocalDataSource
+import com.example.pokemon.features.pokemons.data.remote.PokemonApiRemoteDataSource
 import com.example.pokemon.features.pokemons.data.remote.PokemonMockRemoteDataSource
 import com.example.pokemon.features.pokemons.domain.Pokemon
 import com.example.pokemon.features.pokemons.domain.PokemonRepository
 
 class PokemonDataRepository(
     private val local: PokemonXmlLocalDataSource,
-    private val remote: PokemonMockRemoteDataSource
+    private val remote: PokemonApiRemoteDataSource
 ) : PokemonRepository {
 
-    override fun getPokemons(): List<Pokemon> {
+    override suspend fun getPokemons(): List<Pokemon> {
         val pokemonFromLocal = local.findAll()
         if (pokemonFromLocal.isEmpty()) {
             val pokemonFromRemote = remote.getPokemons()
@@ -20,7 +21,7 @@ class PokemonDataRepository(
         return pokemonFromLocal
     }
 
-    override fun getPokemon(pokemonId: String): Pokemon? {
+        override suspend fun getPokemon(pokemonId: String): Pokemon? {
         val localPokemon = local.findById(pokemonId)
         if (localPokemon == null){
             remote.getPokemon(pokemonId)?.let {
