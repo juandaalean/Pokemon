@@ -35,17 +35,59 @@ class PokemonMockRemoteDataSource {
         ),
         Pokemon(
             "5",
-            "Jillicent",
-            "Water",
-            "521",
-            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/593.png"
+            "Cinccino",
+            "Normal",
+            "573",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/573.png"
         ),
         Pokemon(
             "6",
-            "Pikachu",
+            "Pichu",
             "Electro",
-            "25",
-            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png"
+            "172",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/172.png"
+        ),
+        Pokemon(
+            "7",
+            "Mightyena",
+            "Dark",
+            "262",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/262.png"
+        ),
+        Pokemon(
+            "8",
+            "Charizard",
+            "Fire",
+            "6",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png"
+        ),
+        Pokemon(
+            "9",
+            "Ditto",
+            "Normal",
+            "132",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/132.png"
+        ),
+        Pokemon(
+            "10",
+            "Persian",
+            "Normal",
+            "53",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/053.png"
+        ),
+        Pokemon(
+            "11",
+            "Timburr",
+            "Fighter",
+            "532",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/532.png"
+        ),
+        Pokemon(
+            "12",
+            "Tangela",
+            "Plant",
+            "114",
+            "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/114.png"
         )
         )
 

@@ -9,22 +9,18 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokemon.R
-import com.example.pokemon.app.extensions.loadUrl
 import com.example.pokemon.databinding.FragmentPokemonBinding
-import com.example.pokemon.features.pokemons.domain.Pokemon
 
 class PokemonsFragment : Fragment() {
-
-    private lateinit var pokemonFactory: PokemonFactory
-    private lateinit var viewModel: PokemonViewModel
-
-    private var pokemonAdapter = PokemonAdapter()
 
 
     private var _binding: FragmentPokemonBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var pokemonFactory: PokemonFactory
+    private lateinit var viewModel: PokemonViewModel
+
+    private val pokemonAdapter = PokemonAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,36 +30,21 @@ class PokemonsFragment : Fragment() {
         _binding = FragmentPokemonBinding.inflate(inflater, container, false)
         setupView()
         return binding.root
-
     }
 
-
-
-    private fun setupView() {
-        binding.apply {
-            pokemonRecyclerView.layoutManager = LinearLayoutManager(
-                requireContext(),
-                LinearLayoutManager.VERTICAL,
-                false
-            )
-            pokemonRecyclerView.adapter = pokemonAdapter
-        }
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         pokemonFactory = PokemonFactory(requireContext())
         viewModel = pokemonFactory.buildViewModel()
-        setupObserver()
         viewModel.viewCreated()
+        setupObserver()
     }
 
     private fun setupObserver() {
         val pokemonObserver = Observer<PokemonViewModel.UiState> { uiState ->
             uiState.pokemons?.let {
                 pokemonAdapter.submitList(it)
-
             }
             uiState.errorApp?.let {
 
@@ -77,6 +58,17 @@ class PokemonsFragment : Fragment() {
         viewModel.uiState.observe(viewLifecycleOwner, pokemonObserver)
     }
 
+
+    private fun setupView() {
+        binding.apply {
+            pokemonRecyclerView.layoutManager = LinearLayoutManager(
+                requireContext(), RecyclerView.VERTICAL,
+                false
+            )
+            pokemonRecyclerView.adapter = pokemonAdapter
+
+        }
+    }
 
 
     private fun navegationToDetails(pokemonId: String) {

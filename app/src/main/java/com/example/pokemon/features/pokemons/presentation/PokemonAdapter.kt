@@ -19,7 +19,7 @@ class PokemonAdapter() : ListAdapter<Pokemon, PokemonViewHolder>(PokemonDiffUtil
 
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        val item = currentList[position]
+        val item =currentList[position]
         holder.render(item)
     }
 }
